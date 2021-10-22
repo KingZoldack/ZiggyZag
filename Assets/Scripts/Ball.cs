@@ -15,8 +15,8 @@ public class Ball : MonoBehaviour
 
     public bool hasStarted, canClickNow = true;
 
-    [SerializeField]
-    GameObject _particles;
+    [SerializeField] GameObject _particles;
+    [SerializeField] GameObject[] _dustTrailParticles;
 
     private void Awake()
     {
@@ -83,12 +83,16 @@ public class Ball : MonoBehaviour
     {
         if (_rb.velocity.z > 0)
         {
+            _dustTrailParticles[1].SetActive(true);
+            _dustTrailParticles[0].SetActive(false);
             AudioManager.instance.PlayClickSound();
             _rb.velocity = new Vector3(_speed, 0, 0);
         }
 
         else if (_rb.velocity.x > 0)
         {
+            _dustTrailParticles[0].SetActive(true);
+            _dustTrailParticles[1].SetActive(false);
             AudioManager.instance.PlayClickSound();
             _rb.velocity = new Vector3(0, 0, _speed);
         }
