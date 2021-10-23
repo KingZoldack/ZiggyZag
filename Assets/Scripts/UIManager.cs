@@ -23,6 +23,7 @@ public class UIManager : MonoBehaviour
 
     public void GameOver()
     {
+        _currentScoreText.enabled = false;
         _gameOverPanelContainer.SetActive(true);
         PlatformSpawner.instance.isGameOver = true;
         GameManager.instance.DisplayScore();

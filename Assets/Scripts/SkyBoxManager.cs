@@ -22,13 +22,12 @@ public class SkyBoxManager : MonoBehaviour
 
     IEnumerator ChangeSkyBox()
     {
+            while (true)
+            {
+                _randomIndex = Random.Range(0, _skyBoxes.Length - 1);
 
-        while (true)
-        {
-            _randomIndex = Random.Range(0, _skyBoxes.Length - 1);
-
-            RenderSettings.skybox = _skyBoxes[_randomIndex];
-            yield return new WaitForSeconds(_changeDelayTime);
-        }
+                RenderSettings.skybox = _skyBoxes[_randomIndex];
+                yield return new WaitForSeconds(_changeDelayTime);
+            }
     }
 }

@@ -22,6 +22,18 @@ public class AudioManager : MonoBehaviour
         {
             instance = this;
         }
+
+        int numAudioManagers = FindObjectsOfType<AudioManager>().Length;
+
+        if (numAudioManagers > 1)
+        {
+            Destroy(this.gameObject);
+        }
+
+        else
+        {
+            DontDestroyOnLoad(this.gameObject);
+        }
     }
     
     public void PlayClickSound()

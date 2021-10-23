@@ -76,7 +76,6 @@ public class Ball : MonoBehaviour
         GameManager.instance.StopScoreCount();
         GameManager.instance.CheckForHighscore();
         _rb.velocity = new Vector3(0, -25f, 0);
-        UIManager.instance._currentScoreText.enabled = false;
     }
 
     void SwitchDirection()
