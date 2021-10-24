@@ -33,6 +33,12 @@ public class UIManager : MonoBehaviour
 
     public void RestartGame()
     {
+        SceneManager.LoadScene(1);
+    }
+
+    public void LoadMainMenu()
+    {
         SceneManager.LoadScene(0);
     }
+
 }
