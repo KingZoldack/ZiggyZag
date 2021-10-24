@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: 5d133deeaa66ed445853e946ff25e073, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 8401881fcb9afd34eb383fc90bbbbddc, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.34358212, g: 0.18112776, b: 0.14830637, a: 1}
+  m_IndirectSpecularColor: {r: 0.1321137, g: 0.06428685, b: 0.07860669, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -123,26 +123,17 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &388267223 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8814508684832927554, guid: bfbc54380227b384a9b530b39858d1a0, type: 3}
+--- !u!114 &388267224 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 388267224, guid: bfbc54380227b384a9b530b39858d1a0, type: 3}
   m_PrefabInstance: {fileID: 8814508684806266240}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &388267224
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 388267223}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f3c07603e3eb38e4783f68367e70108f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  previousButton: {fileID: 682042803}
-  nextButton: {fileID: 532055223}
-  itemNameText: {fileID: 1165070702}
 --- !u!114 &532055223 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 532055223, guid: 97ba8202044b1454dacf27a572f9f89c, type: 3}
@@ -345,6 +336,51 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1211578298
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1211578300}
+  - component: {fileID: 1211578299}
+  m_Layer: 0
+  m_Name: SkyBox Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1211578299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1211578298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f248d84b8fa90f41bad078d624570cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _skyBoxes: []
+  _changeDelayTime: 10
+--- !u!4 &1211578300
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1211578298}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1361378236
 GameObject:
   m_ObjectHideFlags: 0
@@ -676,9 +712,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 640493983}
     - target: {fileID: 124669379228223175, guid: 97ba8202044b1454dacf27a572f9f89c, type: 3}
+      propertyPath: clickEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 124669379228223175, guid: 97ba8202044b1454dacf27a572f9f89c, type: 3}
       propertyPath: clickEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1114780271}
+      objectReference: {fileID: 388267224}
+    - target: {fileID: 124669379228223175, guid: 97ba8202044b1454dacf27a572f9f89c, type: 3}
+      propertyPath: clickEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SelectSkyBox
+      objectReference: {fileID: 0}
+    - target: {fileID: 124669379228223175, guid: 97ba8202044b1454dacf27a572f9f89c, type: 3}
+      propertyPath: clickEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SelectorScroller, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 124669379758494062, guid: 97ba8202044b1454dacf27a572f9f89c, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -705,7 +753,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 124669380026955359, guid: 97ba8202044b1454dacf27a572f9f89c, type: 3}
       propertyPath: clickEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: LoadMainMenu
+      value: LoadGameScene
       objectReference: {fileID: 0}
     - target: {fileID: 124669380026955359, guid: 97ba8202044b1454dacf27a572f9f89c, type: 3}
       propertyPath: clickEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -724,38 +772,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 8814508684534341092, guid: bfbc54380227b384a9b530b39858d1a0, type: 3}
-      propertyPath: m_Name
-      value: Deep Space Blue Planet
-      objectReference: {fileID: 0}
-    - target: {fileID: 8814508684534341092, guid: bfbc54380227b384a9b530b39858d1a0, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8814508684594647195, guid: bfbc54380227b384a9b530b39858d1a0, type: 3}
-      propertyPath: m_Name
-      value: Deep Space Blue
-      objectReference: {fileID: 0}
-    - target: {fileID: 8814508684594647195, guid: bfbc54380227b384a9b530b39858d1a0, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8814508684668181748, guid: bfbc54380227b384a9b530b39858d1a0, type: 3}
-      propertyPath: m_Name
-      value: Cosmic Cool Cloud
-      objectReference: {fileID: 0}
-    - target: {fileID: 8814508684668181748, guid: bfbc54380227b384a9b530b39858d1a0, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8814508684692853530, guid: bfbc54380227b384a9b530b39858d1a0, type: 3}
-      propertyPath: m_Name
-      value: Galaxy Fire
-      objectReference: {fileID: 0}
-    - target: {fileID: 8814508684692853530, guid: bfbc54380227b384a9b530b39858d1a0, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
+    - target: {fileID: 388267224, guid: bfbc54380227b384a9b530b39858d1a0, type: 3}
+      propertyPath: nextButton
+      value: 
+      objectReference: {fileID: 532055223}
+    - target: {fileID: 388267224, guid: bfbc54380227b384a9b530b39858d1a0, type: 3}
+      propertyPath: itemNameText
+      value: 
+      objectReference: {fileID: 1165070702}
+    - target: {fileID: 388267224, guid: bfbc54380227b384a9b530b39858d1a0, type: 3}
+      propertyPath: skyBoxManager
+      value: 
+      objectReference: {fileID: 1211578299}
+    - target: {fileID: 388267224, guid: bfbc54380227b384a9b530b39858d1a0, type: 3}
+      propertyPath: previousButton
+      value: 
+      objectReference: {fileID: 682042803}
     - target: {fileID: 8814508684832927554, guid: bfbc54380227b384a9b530b39858d1a0, type: 3}
       propertyPath: m_Name
       value: Background Selector
@@ -804,107 +836,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8814508684868436704, guid: bfbc54380227b384a9b530b39858d1a0, type: 3}
-      propertyPath: m_Name
-      value: Green Soul Space
-      objectReference: {fileID: 0}
-    - target: {fileID: 8814508684868436704, guid: bfbc54380227b384a9b530b39858d1a0, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8814508684921167756, guid: bfbc54380227b384a9b530b39858d1a0, type: 3}
-      propertyPath: m_Name
-      value: Deep Spirit Space
-      objectReference: {fileID: 0}
-    - target: {fileID: 8814508684921167756, guid: bfbc54380227b384a9b530b39858d1a0, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8814508685177213590, guid: bfbc54380227b384a9b530b39858d1a0, type: 3}
-      propertyPath: m_Name
-      value: Planet Earth
-      objectReference: {fileID: 0}
-    - target: {fileID: 8814508685177213590, guid: bfbc54380227b384a9b530b39858d1a0, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8814508685298689392, guid: bfbc54380227b384a9b530b39858d1a0, type: 3}
-      propertyPath: m_Name
-      value: Under Sea
-      objectReference: {fileID: 0}
-    - target: {fileID: 8814508685298689392, guid: bfbc54380227b384a9b530b39858d1a0, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8814508685320113140, guid: bfbc54380227b384a9b530b39858d1a0, type: 3}
-      propertyPath: m_Name
-      value: Deep Space Green Planet
-      objectReference: {fileID: 0}
-    - target: {fileID: 8814508685320113140, guid: bfbc54380227b384a9b530b39858d1a0, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8814508685374272543, guid: bfbc54380227b384a9b530b39858d1a0, type: 3}
-      propertyPath: m_Name
-      value: Galactic Green
-      objectReference: {fileID: 0}
-    - target: {fileID: 8814508685374272543, guid: bfbc54380227b384a9b530b39858d1a0, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8814508685528799033, guid: bfbc54380227b384a9b530b39858d1a0, type: 3}
-      propertyPath: m_Name
-      value: Deep Space Red
-      objectReference: {fileID: 0}
-    - target: {fileID: 8814508685528799033, guid: bfbc54380227b384a9b530b39858d1a0, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8814508685799789823, guid: bfbc54380227b384a9b530b39858d1a0, type: 3}
-      propertyPath: m_Name
-      value: Diverse Space
-      objectReference: {fileID: 0}
-    - target: {fileID: 8814508685799789823, guid: bfbc54380227b384a9b530b39858d1a0, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8814508685839249391, guid: bfbc54380227b384a9b530b39858d1a0, type: 3}
-      propertyPath: m_Name
-      value: Star Skies
-      objectReference: {fileID: 0}
-    - target: {fileID: 8814508685839249391, guid: bfbc54380227b384a9b530b39858d1a0, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8814508686196076740, guid: bfbc54380227b384a9b530b39858d1a0, type: 3}
-      propertyPath: m_Name
-      value: Pink Heart Space
-      objectReference: {fileID: 0}
-    - target: {fileID: 8814508686196076740, guid: bfbc54380227b384a9b530b39858d1a0, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8814508686198506189, guid: bfbc54380227b384a9b530b39858d1a0, type: 3}
-      propertyPath: m_Name
-      value: Deep Space Red Planet
-      objectReference: {fileID: 0}
-    - target: {fileID: 8814508686198506189, guid: bfbc54380227b384a9b530b39858d1a0, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8814508686241122242, guid: bfbc54380227b384a9b530b39858d1a0, type: 3}
-      propertyPath: m_Name
-      value: Unearthly Red
-      objectReference: {fileID: 0}
-    - target: {fileID: 8814508686241122242, guid: bfbc54380227b384a9b530b39858d1a0, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8814508686548040934, guid: bfbc54380227b384a9b530b39858d1a0, type: 3}
-      propertyPath: m_Name
-      value: Deep Space Green
-      objectReference: {fileID: 0}
-    - target: {fileID: 8814508686548040934, guid: bfbc54380227b384a9b530b39858d1a0, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}

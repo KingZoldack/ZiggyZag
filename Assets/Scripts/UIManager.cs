@@ -41,4 +41,14 @@ public class UIManager : MonoBehaviour
         SceneManager.LoadScene(0);
     }
 
+    public void LoadSelectionMenu()
+    {
+        SceneManager.LoadScene(2);
+    }
+
+    public void LoadGameScene()
+    {
+        SceneManager.LoadScene(1);
+    }
+
 }

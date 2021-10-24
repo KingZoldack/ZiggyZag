@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 8814508684534341095}
   - component: {fileID: 8814508684534341094}
   m_Layer: 0
-  m_Name: DSBWP
+  m_Name: Deep Space Blue Planet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -274,7 +274,7 @@ GameObject:
   - component: {fileID: 8814508684594647198}
   - component: {fileID: 8814508684594647197}
   m_Layer: 0
-  m_Name: DSB
+  m_Name: Deep Space Blue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -453,7 +453,7 @@ GameObject:
   - component: {fileID: 8814508684668181751}
   - component: {fileID: 8814508684668181750}
   m_Layer: 0
-  m_Name: CosmicCoolCloud
+  m_Name: Cosmic Cool Cloud
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -550,7 +550,7 @@ GameObject:
   - component: {fileID: 8814508684692853533}
   - component: {fileID: 8814508684692853532}
   m_Layer: 0
-  m_Name: GalaxyFireMaterial
+  m_Name: Galaxy Fire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -889,6 +889,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8814508684832927555}
+  - component: {fileID: 388267224}
   m_Layer: 0
   m_Name: Background Selector
   m_TagString: Untagged
@@ -927,6 +928,39 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &388267224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8814508684832927554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3c07603e3eb38e4783f68367e70108f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  previousButton: {fileID: 0}
+  nextButton: {fileID: 0}
+  skyBoxMaterials:
+  - {fileID: 2100000, guid: b9be0c15efe8ad9489fdeead114d8ec5, type: 2}
+  - {fileID: 2100000, guid: a4be220830e90ea4eb88b48b7fd376ce, type: 2}
+  - {fileID: 2100000, guid: 42eaf2c5dbb13dc498f15df5a5b05fda, type: 2}
+  - {fileID: 2100000, guid: 69e10e886d52d20478f9ed5424126be8, type: 2}
+  - {fileID: 2100000, guid: e980bc7fbb00dc34b86b95ac842d1920, type: 2}
+  - {fileID: 2100000, guid: a07fadb24ea940240afba3afc1a692cc, type: 2}
+  - {fileID: 2100000, guid: 5b21c6a8ce40f9641bd1204324b90b2c, type: 2}
+  - {fileID: 2100000, guid: 966766f4829d6ad419eaaf7cf0712f85, type: 2}
+  - {fileID: 2100000, guid: 19e2485c6f92d6944ad20466ac77b04c, type: 2}
+  - {fileID: 2100000, guid: b8f20d5ca50d16143afc11f5e4af6fc1, type: 2}
+  - {fileID: 2100000, guid: 8401881fcb9afd34eb383fc90bbbbddc, type: 2}
+  - {fileID: 2100000, guid: b13109bc4674dd24ebc04b7c12437ad6, type: 2}
+  - {fileID: 2100000, guid: 95ebf50189f880e4aa17c4fdba9007aa, type: 2}
+  - {fileID: 2100000, guid: f531e09e2ad2fb440b4eed7605863143, type: 2}
+  - {fileID: 2100000, guid: 16bc8a9d5451ca44d8f70575adbece3a, type: 2}
+  - {fileID: 2100000, guid: 119ec07f1c7ed204db46bd8465fd5a50, type: 2}
+  - {fileID: 2100000, guid: 5d133deeaa66ed445853e946ff25e073, type: 2}
+  itemNameText: {fileID: 0}
 --- !u!1 &8814508684868436704
 GameObject:
   m_ObjectHideFlags: 0
@@ -940,7 +974,7 @@ GameObject:
   - component: {fileID: 8814508684868436707}
   - component: {fileID: 8814508684868436706}
   m_Layer: 0
-  m_Name: Green_4K_Resolution
+  m_Name: Green Soul Space
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1037,7 +1071,7 @@ GameObject:
   - component: {fileID: 8814508684921167759}
   - component: {fileID: 8814508684921167758}
   m_Layer: 0
-  m_Name: Purple_4K_Resolution
+  m_Name: Deep Spirit Space
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1298,7 +1332,7 @@ GameObject:
   - component: {fileID: 8814508685177213593}
   - component: {fileID: 8814508685177213592}
   m_Layer: 0
-  m_Name: PlanetaryEarth4k
+  m_Name: Planet Earth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1559,7 +1593,7 @@ GameObject:
   - component: {fileID: 8814508685298689395}
   - component: {fileID: 8814508685298689394}
   m_Layer: 0
-  m_Name: UnderTheSea4k
+  m_Name: Under Sea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1656,7 +1690,7 @@ GameObject:
   - component: {fileID: 8814508685320113143}
   - component: {fileID: 8814508685320113142}
   m_Layer: 0
-  m_Name: DSGWP
+  m_Name: Deep Space Green Planet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1835,7 +1869,7 @@ GameObject:
   - component: {fileID: 8814508685374272546}
   - component: {fileID: 8814508685374272545}
   m_Layer: 0
-  m_Name: GalacticGreenMaterial
+  m_Name: Galactic Green
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2014,7 +2048,7 @@ GameObject:
   - component: {fileID: 8814508685528799036}
   - component: {fileID: 8814508685528799035}
   m_Layer: 0
-  m_Name: DSR
+  m_Name: Deep Space Red
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2111,7 +2145,7 @@ GameObject:
   - component: {fileID: 8814508685799789569}
   - component: {fileID: 8814508685799789568}
   m_Layer: 0
-  m_Name: DiverseSpaceMaterial
+  m_Name: Diverse Space
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2208,12 +2242,12 @@ GameObject:
   - component: {fileID: 8814508685839249394}
   - component: {fileID: 8814508685839249393}
   m_Layer: 0
-  m_Name: StarSkyBox
+  m_Name: Star Skies
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8814508685839249392
 Transform:
   m_ObjectHideFlags: 0
@@ -2551,7 +2585,7 @@ GameObject:
   - component: {fileID: 8814508686196076743}
   - component: {fileID: 8814508686196076742}
   m_Layer: 0
-  m_Name: Pink_4K_Resolution
+  m_Name: Pink Heart Space
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2648,7 +2682,7 @@ GameObject:
   - component: {fileID: 8814508686198506192}
   - component: {fileID: 8814508686198506191}
   m_Layer: 0
-  m_Name: DSRWP
+  m_Name: Deep Space Red Planet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2745,7 +2779,7 @@ GameObject:
   - component: {fileID: 8814508686241122245}
   - component: {fileID: 8814508686241122244}
   m_Layer: 0
-  m_Name: UnearthlyRed4k
+  m_Name: Unearthly Red
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2924,7 +2958,7 @@ GameObject:
   - component: {fileID: 8814508686548040937}
   - component: {fileID: 8814508686548040936}
   m_Layer: 0
-  m_Name: DSG
+  m_Name: Deep Space Green
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

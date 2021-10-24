@@ -8,7 +8,10 @@ public class SelectorScroller : MonoBehaviour
 {
     [SerializeField] Button previousButton;
     [SerializeField] Button nextButton;
+    [SerializeField] Material[] skyBoxMaterials;
     [SerializeField] TextMeshProUGUI itemNameText;
+
+    [SerializeField] SkyBoxManager skyBoxManager;
 
     int currentItem;
 
@@ -16,8 +19,16 @@ public class SelectorScroller : MonoBehaviour
     {
         SelectItem(0);
         itemNameText.text = transform.GetChild(0).name;
+        //skyBoxManager = FindObjectOfType<SkyBoxManager>();
 
     }
+
+    private void Update()
+    {
+        //SelectSkyBox();
+    }
+
+    
 
     void SelectItem(int _selectedIndex)
     {
@@ -27,7 +38,6 @@ public class SelectorScroller : MonoBehaviour
         for (int i = 0; i < transform.childCount; i++)
         {
             transform.GetChild(i).gameObject.SetActive(i == _selectedIndex);
-
         }
     }
 
@@ -37,4 +47,15 @@ public class SelectorScroller : MonoBehaviour
         itemNameText.text = transform.GetChild(currentItem).name;
         SelectItem(currentItem);
     }
+
+    public void SelectSkyBox()
+    {
+        skyBoxManager.SelectItem(currentItem, skyBoxMaterials);
+        PlayerPrefs.SetInt("SkyBox", currentItem);
+        Debug.Log(currentItem + "<=== CurrentItem");
+
+    }
+
+
+
 }
