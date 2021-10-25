@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class SkyBoxManager : MonoBehaviour
 {
-    //public static SkyBoxManager instance; 
 
     [SerializeField] Material[] _skyBoxes;
     [SerializeField] float _changeDelayTime = 10f;
@@ -34,11 +33,8 @@ public class SkyBoxManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        var pref = PlayerPrefs.GetInt("SkyBox");
-        //if (pref > 16 )
-        //{
-        //    pref = 0;
-        //}
+        var pref = PlayerPrefs.GetInt("Selected SkyBox");
+        
         RenderSettings.skybox = _skyBoxes[pref];
         Debug.Log("==>" + pref);
     }
@@ -56,9 +52,7 @@ public class SkyBoxManager : MonoBehaviour
 
     public void SelectItem(int currentSelection, Material[] childMat)
     {
-        //Create a method to save which skybox is selected.
         RenderSettings.skybox = childMat[currentSelection];
         PlayerPrefs.SetInt("Current Selection", currentSelection);
-
     }
 }
