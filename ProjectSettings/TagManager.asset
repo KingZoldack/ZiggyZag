@@ -12,8 +12,8 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
+  - Game Skybox
+  - Selection Images
   - 
   - 
   - 
@@ -41,4 +41,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Game Skybox
+    uniqueID: 3294202085
+    locked: 0
+  - name: Selection Images
+    uniqueID: 3015339357
     locked: 0

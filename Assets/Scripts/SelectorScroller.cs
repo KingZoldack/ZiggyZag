@@ -41,14 +41,13 @@ public class SelectorScroller : MonoBehaviour
     public void ChangeItem(int _change)
     {
         currentItem += _change;
-        Debug.Log($"Change: {_change}");
         itemNameText.text = transform.GetChild(currentItem).name;
         SelectItem(currentItem);
     }
 
     public void SelectSkyBox()
     {
-        skyBoxManager.SelectItem(currentItem, skyBoxMaterials);
+        skyBoxManager.SelectItemInSkyBox(currentItem, skyBoxMaterials);
         PlayerPrefs.SetInt("Selected SkyBox", currentItem);
         Debug.Log(currentItem + "<=== CurrentItem");
     }

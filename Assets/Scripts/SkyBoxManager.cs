@@ -7,6 +7,7 @@ public class SkyBoxManager : MonoBehaviour
 
     [SerializeField] Material[] _skyBoxes;
     [SerializeField] float _changeDelayTime = 10f;
+    public bool _isRandomSelected;
 
     int _randomIndex;
 
@@ -27,32 +28,53 @@ public class SkyBoxManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-      //  StartCoroutine(ChangeSkyBox());
+        StartCoroutine(ChangeSkyBox());
     }
 
-    // Update is called once per frame
     void Update()
     {
         var pref = PlayerPrefs.GetInt("Selected SkyBox");
         
         RenderSettings.skybox = _skyBoxes[pref];
         Debug.Log("==>" + pref);
+        if (pref == _skyBoxes.Length - 1)
+        {
+            _isRandomSelected = true;
+            //StartCoroutine(ChangeSkyBox());
+        }
     }
 
-    //IEnumerator ChangeSkyBox()
-    //{
-    //        while (true)
-    //        {
-    //            _randomIndex = Random.Range(0, _skyBoxes.Length - 1);
-
-    //            RenderSettings.skybox = _skyBoxes[_randomIndex];
-    //            yield return new WaitForSeconds(_changeDelayTime);
-    //        }
-    //}
-
-    public void SelectItem(int currentSelection, Material[] childMat)
+    IEnumerator ChangeSkyBox()
     {
-        RenderSettings.skybox = childMat[currentSelection];
-        PlayerPrefs.SetInt("Current Selection", currentSelection);
+        _isRandomSelected = false;
+        while (true)
+        {
+            _randomIndex = Random.Range(0, _skyBoxes.Length - 1);
+
+            for (int i = 0; i < _skyBoxes.Length; i++)
+            {
+                RenderSettings.skybox = _skyBoxes[i];
+                yield return new WaitForSeconds(_changeDelayTime);
+
+            }
+            //foreach (var skybox in _skyBoxes)
+            //{
+            //    RenderSettings.skybox = skybox;
+
+            //}
+
+            //yield return new WaitForEndOfFrame();
+
+        }
+    }
+
+    public void SelectItemInSkyBox(int currentSelection, Material[] childMat)
+    {
+        if (_isRandomSelected == false)
+        {
+            RenderSettings.skybox = childMat[currentSelection];
+            PlayerPrefs.SetInt("Current Selection", currentSelection);
+        }
+        
     }
 }
