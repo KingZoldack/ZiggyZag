@@ -6,15 +6,33 @@ public class RandomizeSprites : MonoBehaviour
 {
     [SerializeField] Sprite[] randomSpritesSprites;
 
-    // Start is called before the first frame update
-    void Start()
+    SpriteRenderer spriteRenderer;
+
+    private void Awake()
     {
-        
+       spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnEnable()
     {
-        
+        StartCoroutine(ChangeSpriteRoutine());
+    }
+
+    private void OnDisable()
+    {
+        StopAllCoroutines();
+    }
+
+    IEnumerator ChangeSpriteRoutine()
+    {
+        while (true)
+        {
+            foreach (var sprite in randomSpritesSprites)
+            {
+                spriteRenderer.sprite = sprite;
+
+                yield return new WaitForSeconds(1f);
+            }
+        }
     }
 }

@@ -141,7 +141,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &68626661
 Transform:
   m_ObjectHideFlags: 0
@@ -1026,6 +1026,10 @@ PrefabInstance:
       propertyPath: previousButton
       value: 
       objectReference: {fileID: 682042803}
+    - target: {fileID: 8814508684534341092, guid: bfbc54380227b384a9b530b39858d1a0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8814508684832927554, guid: bfbc54380227b384a9b530b39858d1a0, type: 3}
       propertyPath: m_Name
       value: Background Selector
@@ -1074,11 +1078,27 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8814508684921167756, guid: bfbc54380227b384a9b530b39858d1a0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8814508685320113140, guid: bfbc54380227b384a9b530b39858d1a0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8814508685363785145, guid: bfbc54380227b384a9b530b39858d1a0, type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8814508685528799033, guid: bfbc54380227b384a9b530b39858d1a0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8814508686196076740, guid: bfbc54380227b384a9b530b39858d1a0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8814508686198506189, guid: bfbc54380227b384a9b530b39858d1a0, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
