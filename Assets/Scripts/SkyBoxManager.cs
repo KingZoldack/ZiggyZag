@@ -28,7 +28,7 @@ public class SkyBoxManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(ChangeSkyBox());
+        //StartCoroutine(ChangeSkyBox());
     }
 
     void Update()
@@ -37,36 +37,36 @@ public class SkyBoxManager : MonoBehaviour
         
         RenderSettings.skybox = _skyBoxes[pref];
         Debug.Log("==>" + pref);
-        if (pref == _skyBoxes.Length - 1)
-        {
-            _isRandomSelected = true;
-            //StartCoroutine(ChangeSkyBox());
-        }
+        //if (pref == _skyBoxes.Length - 1)
+        //{
+        //    _isRandomSelected = true;
+        //    //StartCoroutine(ChangeSkyBox());
+        //}
     }
 
-    IEnumerator ChangeSkyBox()
-    {
-        _isRandomSelected = false;
-        while (true)
-        {
-            _randomIndex = Random.Range(0, _skyBoxes.Length - 1);
+    //IEnumerator ChangeSkyBox()
+    //{
+    //    _isRandomSelected = false;
+    //    while (true)
+    //    {
+    //        _randomIndex = Random.Range(0, _skyBoxes.Length - 1);
 
-            for (int i = 0; i < _skyBoxes.Length; i++)
-            {
-                RenderSettings.skybox = _skyBoxes[i];
-                yield return new WaitForSeconds(_changeDelayTime);
+    //        for (int i = 0; i < _skyBoxes.Length; i++)
+    //        {
+    //            RenderSettings.skybox = _skyBoxes[i];
+    //            yield return new WaitForSeconds(_changeDelayTime);
 
-            }
-            //foreach (var skybox in _skyBoxes)
-            //{
-            //    RenderSettings.skybox = skybox;
+    //        }
+    //        //foreach (var skybox in _skyBoxes)
+    //        //{
+    //        //    RenderSettings.skybox = skybox;
 
-            //}
+    //        //}
 
-            //yield return new WaitForEndOfFrame();
+    //        //yield return new WaitForEndOfFrame();
 
-        }
-    }
+    //    }
+    //}
 
     public void SelectItemInSkyBox(int currentSelection, Material[] childMat)
     {

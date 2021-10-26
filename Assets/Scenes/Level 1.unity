@@ -2333,7 +2333,6 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 16bc8a9d5451ca44d8f70575adbece3a, type: 2}
   - {fileID: 2100000, guid: 119ec07f1c7ed204db46bd8465fd5a50, type: 2}
   - {fileID: 2100000, guid: 5d133deeaa66ed445853e946ff25e073, type: 2}
-  - {fileID: 2100000, guid: 33619866d80302a4092ec44e03ada62c, type: 2}
   _changeDelayTime: 3
   _isRandomSelected: 0
 --- !u!4 &2113308367
