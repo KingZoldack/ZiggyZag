@@ -782,7 +782,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 124669380026955359, guid: 97ba8202044b1454dacf27a572f9f89c, type: 3}
       propertyPath: clickEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: LoadGameScene
+      value: LoadMainMenu
       objectReference: {fileID: 0}
     - target: {fileID: 124669380026955359, guid: 97ba8202044b1454dacf27a572f9f89c, type: 3}
       propertyPath: clickEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -819,7 +819,7 @@ PrefabInstance:
       objectReference: {fileID: 682042803}
     - target: {fileID: 388267224, guid: bfbc54380227b384a9b530b39858d1a0, type: 3}
       propertyPath: skyBoxMaterials.Array.size
-      value: 18
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 388267224, guid: bfbc54380227b384a9b530b39858d1a0, type: 3}
       propertyPath: skyBoxMaterials.Array.data[17]
