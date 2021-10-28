@@ -11,41 +11,20 @@ public class SkyBoxManager : MonoBehaviour
 
     int _randomIndex;
 
-    private void Awake()
-    {
-        int numOfSkyBoxManager = FindObjectsOfType<SkyBoxManager>().Length;
-        if (numOfSkyBoxManager > 1)
-        {
-            Destroy(this.gameObject);
-        }
-
-        else
-        {
-            DontDestroyOnLoad(gameObject);
-        }
-    }
-
-    // Start is called before the first frame update
     void Start()
     {
-        //
+        StartCoroutine(ChangeSkyBox());
     }
 
     void Update()
     {
-        var pref = PlayerPrefs.GetInt("Selected SkyBox");
+        var loadSelectedSkyBox = PlayerPrefs.GetInt("Selected SkyBox");
 
         if (!_isMainMenu)
         {
-            RenderSettings.skybox = _skyBoxes[pref];
-            Debug.Log("==>" + pref);
+            StopAllCoroutines();
+            RenderSettings.skybox = _skyBoxes[loadSelectedSkyBox];
         }
-
-        else if (_isMainMenu)
-        {
-            StartCoroutine(ChangeSkyBox());
-        }
-        
         
     }
 
@@ -55,21 +34,9 @@ public class SkyBoxManager : MonoBehaviour
         {
             _randomIndex = Random.Range(0, _skyBoxes.Length - 1);
 
-            for (int i = 0; i < _skyBoxes.Length; i++)
-            {
-                yield return new WaitForSeconds(_changeDelayTime);
+            RenderSettings.skybox = _skyBoxes[_randomIndex];
 
-                RenderSettings.skybox = _skyBoxes[i];
-
-            }
-            //foreach (var skybox in _skyBoxes)
-            //{
-            //    RenderSettings.skybox = skybox;
-
-            //}
-
-            //yield return new WaitForEndOfFrame();
-
+            yield return new WaitForSeconds(_changeDelayTime);
         }
     }
 

@@ -1940,6 +1940,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4144406021492861748, guid: 030bf7521c37d0a4aa9a0543f0277a4e, type: 3}
+      propertyPath: _isMainMenu
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4144406021492861749, guid: 030bf7521c37d0a4aa9a0543f0277a4e, type: 3}
       propertyPath: m_RootOrder
       value: 6

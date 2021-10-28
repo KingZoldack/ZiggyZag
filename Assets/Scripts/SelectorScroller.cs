@@ -17,14 +17,11 @@ public class SelectorScroller : MonoBehaviour
 
     private void Awake()
     {
-        SelectItem(0);
-        //var loadSelectedSkyBox = PlayerPrefs.GetInt("Selected SkyBox");
-        itemNameText.text = transform.GetChild(0).name;
-    }
+        var loadSelectedSkyBoxText = PlayerPrefs.GetInt("Selected SkyBox");
 
-    private void Update()
-    {
-        
+        SelectItem(0);
+        itemNameText.text = transform.GetChild(0).name;
+        transform.GetChild(loadSelectedSkyBoxText).GetChild(1).gameObject.SetActive(true);
     }
 
     void SelectItem(int _selectedIndex)
@@ -49,9 +46,6 @@ public class SelectorScroller : MonoBehaviour
     {
         skyBoxManager.SelectItemInSkyBox(currentItem, skyBoxMaterials);
         PlayerPrefs.SetInt("Selected SkyBox", currentItem);
-        Debug.Log(currentItem + "<=== CurrentItem");
+        transform.GetChild(currentItem).GetChild(1).gameObject.SetActive(true);
     }
-
-
-
 }
