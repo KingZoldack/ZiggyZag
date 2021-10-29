@@ -22,7 +22,7 @@ public class SelectorScroller : MonoBehaviour
         //Load first skybox as well as it's name and the "Selected" text:
         SelectItem(0);
         itemNameText.text = transform.GetChild(0).name;
-        //transform.GetChild(loadSelectedSkyBoxText).GetChild(1).gameObject.SetActive(true);
+        transform.GetChild(loadSelectedSkyBoxText).GetChild(1).gameObject.SetActive(true);
     }
 
     void SelectItem(int _selectedIndex) //Loop cycles through the children of attached game object, activating the one it's currently on.
@@ -46,10 +46,24 @@ public class SelectorScroller : MonoBehaviour
     public void SelectSkyBox()
     {
         isSelected = true;
-        skyBoxManager.SelectItemInSkyBox(currentItem, skyBoxMaterials);
-        PlayerPrefs.SetInt(Tags.GET_SELECTED_SKYBOX_TAG, currentItem);
+        skyBoxManager.SelectItemInSkyBox(currentItem, skyBoxMaterials); //Sets SkyBox.
+        PlayerPrefs.SetInt(Tags.GET_SELECTED_SKYBOX_TAG, currentItem); //Saves SkyBox selection.
 
-        //if (isSelected)
-        transform.GetChild(currentItem).GetChild(1).gameObject.SetActive(true);
+        if (isSelected)
+        {
+            transform.GetChild(currentItem).GetChild(1).gameObject.SetActive(true); //Actives selected text gameobject
+            isSelected = false;
+
+            if (isSelected == false)
+            {
+                for (int i = 0; i < transform.childCount; i++) //cycles through all selected text gameobjects and set the ones which aren't selected to false.
+                {
+                    if (i != currentItem)
+                    {
+                        transform.GetChild(i).GetChild(1).gameObject.SetActive(false);
+                    }
+                }
+            }
+        }
     }
 }

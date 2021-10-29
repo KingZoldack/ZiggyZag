@@ -8,6 +8,8 @@ public class SkyBoxManager : MonoBehaviour
     [SerializeField] Material[] _skyBoxes;
     [SerializeField] float _changeDelayTime = 10f;
     [SerializeField] bool _isMainMenu;
+    [SerializeField] bool _isCoreGame;
+
 
     int _randomIndex;
 
@@ -20,7 +22,8 @@ public class SkyBoxManager : MonoBehaviour
     {
         var loadSelectedSkyBox = PlayerPrefs.GetInt(Tags.GET_SELECTED_SKYBOX_TAG); //Gets seleceted sky box from Selector Scroller script.
 
-        if (!_isMainMenu) //If it's not the main menu, use the selected sky box.
+
+        if (_isCoreGame) //If player is in core game, use the selected sky box.
         {
             StopAllCoroutines();
             RenderSettings.skybox = _skyBoxes[loadSelectedSkyBox];
@@ -30,14 +33,18 @@ public class SkyBoxManager : MonoBehaviour
 
     IEnumerator ChangeSkyBoxRandomly() //Displays random sky boxes whilst in the main menu.
     {
-        while (true)
+        if (_isMainMenu)
         {
-            _randomIndex = Random.Range(0, _skyBoxes.Length - 1);
+            while (true)
+            {
+                _randomIndex = Random.Range(0, _skyBoxes.Length);
 
-            RenderSettings.skybox = _skyBoxes[_randomIndex];
+                RenderSettings.skybox = _skyBoxes[_randomIndex];
 
-            yield return new WaitForSeconds(_changeDelayTime);
+                yield return new WaitForSeconds(_changeDelayTime);
+            }
         }
+        
     }
 
     public void SelectItemInSkyBox(int currentSelection, Material[] childMat) //Selects sky box and sets it to the current sky box.
