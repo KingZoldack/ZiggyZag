@@ -6,15 +6,11 @@ public class AudioManager : MonoBehaviour
 {
     public static AudioManager instance;
 
-    [SerializeField]
-    AudioSource _audioSource;
-
-    [SerializeField]
-    AudioClip _clickSound, _collectSound;
-
-    [SerializeField]
-    [Range(0, 1)]
-    float _clickSoundVolume, _collectSoundVolume;
+    [SerializeField] AudioSource _audioSource;
+    [SerializeField] AudioClip _clickSound;
+    [SerializeField] AudioClip _collectSound;
+    [SerializeField] [Range(0, 1)] float _clickSoundVolume;
+    [SerializeField] [Range(0, 1)] float _collectSoundVolume;
 
     private void Awake()
     {
@@ -23,6 +19,7 @@ public class AudioManager : MonoBehaviour
             instance = this;
         }
 
+        //Singleton applied below so music does not restart when changing scenes.
         int numAudioManagers = FindObjectsOfType<AudioManager>().Length;
 
         if (numAudioManagers > 1)

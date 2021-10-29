@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class RandomizeSprites : MonoBehaviour
 {
+    //*************************************************************************************************//
+    //*This script is to be used in the future for randomizing the backgrounds in the selection menus.*//
+    //*************************************************************************************************//
+
     [SerializeField] Sprite[] randomSpritesSprites;
 
     SpriteRenderer spriteRenderer;

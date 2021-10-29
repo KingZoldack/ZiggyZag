@@ -8,10 +8,10 @@ public class UIManager : MonoBehaviour
 {
     public static UIManager instance;
 
-    [SerializeField]
-    GameObject _gameOverPanelContainer;
-
-    public Text _currentScoreText, _scoreValueText, _bestScoreValueText;
+    [SerializeField] GameObject _gameOverPanelContainer;
+    [SerializeField] Text _currentScoreText;
+    [SerializeField] Text _scoreValueText;
+    [SerializeField] Text _bestScoreValueText;
 
     private void Awake()
     {
@@ -21,34 +21,44 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    public void GameOver()
+    public Text CurrentScoreText()
     {
-        _currentScoreText.enabled = false;
-        _gameOverPanelContainer.SetActive(true);
-        PlatformSpawner.instance.isGameOver = true;
-        GameManager.instance.DisplayScore();
-        GameManager.instance.DisplayHighscore();
-        Ball.instance.canClickNow = false;
+        return _currentScoreText;
     }
 
-    public void RestartGame()
+    public Text ScoreValueText()
     {
-        SceneManager.LoadScene(1);
+        return _scoreValueText;
+    }
+
+    public Text BestScoreValueText()
+    {
+        return _bestScoreValueText;
+    }
+
+    public void GameOver()
+    {
+        _currentScoreText.gameObject.SetActive(false);
+        _gameOverPanelContainer.SetActive(true);
+        PlatformSpawner.instance.GameIsOver();
+        GameManager.instance.DisplayScore();
+        GameManager.instance.DisplayHighscore();
+        Ball.instance.CantClickNow();
     }
 
     public void LoadMainMenu()
     {
-        SceneManager.LoadScene(0);
-    }
-
-    public void LoadSelectionMenu()
-    {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(Tags.GET_MAIN_MENU_TAG);
     }
 
     public void LoadGameScene()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(Tags.GET_GAME_SCENE_TAG);
+    }
+
+    public void LoadSelectionMenu()
+    {
+        SceneManager.LoadScene(Tags.GET_SELECETION_MENU_TAG);
     }
 
     public void QuitGame()

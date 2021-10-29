@@ -6,7 +6,8 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
-    int _score, _highScore;
+    int _score;
+    int _highScore;
 
     private void Awake()
     {
@@ -16,12 +17,9 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
     void Update()
     {
         DisplayCurrentScore();
-
-        QuiteGame();
     }
 
     public void IncrementScore()
@@ -31,16 +29,16 @@ public class GameManager : MonoBehaviour
 
     public void CollectableBonus()
     {
-        _score += 5;
+        _score += 5; 
     }
     public void StartScoreCount()
     {
-        InvokeRepeating("IncrementScore", 0.1f, 2f);
+        InvokeRepeating(nameof(IncrementScore), 0.1f, 2f);
     }
 
     public void StopScoreCount()
     {
-        CancelInvoke("IncrementScore");
+        CancelInvoke(nameof(IncrementScore));
     }
 
     public void CheckForHighscore()
@@ -48,39 +46,31 @@ public class GameManager : MonoBehaviour
         if (_score > _highScore)
         {
             _highScore = _score;
-            PlayerPrefs.SetInt("Highscore", _highScore);
+            PlayerPrefs.SetInt(Tags.GET_HIGHSCORE_TAG, _highScore);
         }
     }
 
     public void LoadHighscore()
     {
-       _highScore = PlayerPrefs.GetInt("Highscore", 0);
+       _highScore = PlayerPrefs.GetInt(Tags.GET_HIGHSCORE_TAG, 0);
     }
 
     public void DisplayCurrentScore()
     {
-        if (Ball.instance.hasStarted)
+        if (Ball.instance.HasStarted())
         {
-            UIManager.instance._currentScoreText.enabled = true;
-            UIManager.instance._currentScoreText.text = _score.ToString();
+            UIManager.instance.CurrentScoreText().enabled = true;
+            UIManager.instance.CurrentScoreText().text = _score.ToString();
         }
     }
 
     public void DisplayScore()
     {
-        UIManager.instance._scoreValueText.text = _score.ToString();
+        UIManager.instance.ScoreValueText().text = _score.ToString();
     }
 
     public void DisplayHighscore()
     {
-        UIManager.instance._bestScoreValueText.text = _highScore.ToString();
-    }
-
-    void QuiteGame()
-    {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            Application.Quit();
-        }
+        UIManager.instance.BestScoreValueText().text = _highScore.ToString();
     }
 }

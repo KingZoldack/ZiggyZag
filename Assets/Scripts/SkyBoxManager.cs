@@ -13,14 +13,14 @@ public class SkyBoxManager : MonoBehaviour
 
     void Start()
     {
-        StartCoroutine(ChangeSkyBox());
+        StartCoroutine(ChangeSkyBoxRandomly());
     }
 
     void Update()
     {
-        var loadSelectedSkyBox = PlayerPrefs.GetInt("Selected SkyBox");
+        var loadSelectedSkyBox = PlayerPrefs.GetInt(Tags.GET_SELECTED_SKYBOX_TAG); //Gets seleceted sky box from Selector Scroller script.
 
-        if (!_isMainMenu)
+        if (!_isMainMenu) //If it's not the main menu, use the selected sky box.
         {
             StopAllCoroutines();
             RenderSettings.skybox = _skyBoxes[loadSelectedSkyBox];
@@ -28,7 +28,7 @@ public class SkyBoxManager : MonoBehaviour
         
     }
 
-    IEnumerator ChangeSkyBox()
+    IEnumerator ChangeSkyBoxRandomly() //Displays random sky boxes whilst in the main menu.
     {
         while (true)
         {
@@ -40,9 +40,8 @@ public class SkyBoxManager : MonoBehaviour
         }
     }
 
-    public void SelectItemInSkyBox(int currentSelection, Material[] childMat)
+    public void SelectItemInSkyBox(int currentSelection, Material[] childMat) //Selects sky box and sets it to the current sky box.
     {
         RenderSettings.skybox = childMat[currentSelection];
-        PlayerPrefs.SetInt("Current Selection", currentSelection);
     }
 }

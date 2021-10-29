@@ -4,24 +4,19 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
+    [SerializeField] GameObject _ball;
+    [SerializeField] float _lerpRate;
+
     Vector3 offset;
 
-    [SerializeField]
-    GameObject _ball;
-
-    [SerializeField]
-    float _lerpRate;
-
-    // Start is called before the first frame update
     void Start()
     {
-        offset = _ball.transform.position - transform.position;
+        offset = _ball.transform.position - transform.position; //Returns the offset between the camera and the ball gameobject.
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (!PlatformSpawner.instance.isGameOver)
+        if (!PlatformSpawner.instance.IsGameOver()) //As long as the game is not over.
         {
             Follow();
         }
@@ -29,9 +24,9 @@ public class CameraFollow : MonoBehaviour
 
     void Follow()
     {
-        Vector3 pos = transform.position;
+        Vector3 cameraPos = transform.position;
         Vector3 tragetPos = _ball.transform.position - offset;
-        pos = Vector3.Lerp(pos, tragetPos, _lerpRate);
-        transform.position = pos;
+        cameraPos = Vector3.Lerp(cameraPos, tragetPos, _lerpRate);
+        transform.position = cameraPos;
     }
 }

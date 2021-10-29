@@ -6,14 +6,12 @@ public class PlatformSpawner : MonoBehaviour
 {
     public static PlatformSpawner instance;
 
-    [SerializeField]
-    GameObject _platform, _collectable;
+    [SerializeField] GameObject _platform;
+    [SerializeField] GameObject _collectable;
 
     Vector3 _lastSpawnPosition;
-
     float size;
-
-    public bool isGameOver;
+    bool isGameOver;
 
     private void Awake()
     {
@@ -23,31 +21,39 @@ public class PlatformSpawner : MonoBehaviour
         }
     }
 
-    // Start is called before the first frame update
     void Start()
     {
-        _lastSpawnPosition = _platform.transform.position;
-        size = _platform.transform.localScale.x;
+        _lastSpawnPosition = _platform.transform.position; //This gets the last position of the platform.
+        size = _platform.transform.localScale.x; //This get the size of the platform.
         
 
-        for (int i = 0; i < 15; i++)
+        for (int i = 0; i < 15; i++) //Spawns 15 platforms at start.
         {
-            SPawnPlatforms();
+            SpawnPlatforms();
         }
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (isGameOver)
         {
-            CancelInvoke("SPawnPlatforms");
+            CancelInvoke(nameof(SpawnPlatforms));
         } 
     }
 
-    void SPawnPlatforms()
+    public bool IsGameOver()
     {
-        int rand = Random.Range(0, 6);
+        return isGameOver;
+    }
+
+    public void GameIsOver()
+    {
+        isGameOver = true;
+    }
+
+    void SpawnPlatforms()
+    {
+        int rand = Random.Range(0, 8);
 
         if (rand <= 3)
         {
@@ -62,14 +68,14 @@ public class PlatformSpawner : MonoBehaviour
 
     void SpawnX()
     {
-        Vector3 pos = _lastSpawnPosition;
-        pos.x += size;
-        _lastSpawnPosition = pos;
+        Vector3 pos = _lastSpawnPosition; //Grabs last position
+        pos.x += size; //Set new position to spawn (which is equal to the size of the object)
+        _lastSpawnPosition = pos; //Sets new last position.
         Instantiate(_platform, pos, Quaternion.identity);
 
         int rand = Random.Range(0, 5);
 
-        if (rand < 1)
+        if (rand < 1) //Spawns collectable with a 1 in 5 chance.
         {
             Vector3 posOffset = new Vector3(pos.x, pos.y + 1, pos.z);
             Instantiate(_collectable, posOffset, _collectable.transform.rotation);
@@ -78,22 +84,22 @@ public class PlatformSpawner : MonoBehaviour
 
     void SpawnZ()
     {
-        Vector3 pos = _lastSpawnPosition;
-        pos.z += size;
-        _lastSpawnPosition = pos;
+        Vector3 pos = _lastSpawnPosition; //Grabs last position
+        pos.z += size; //Set new position to spawn (which is equal to the size of the object)
+        _lastSpawnPosition = pos; //Sets new last position.
         Instantiate(_platform, pos, Quaternion.identity);
 
         int rand = Random.Range(0, 5);
 
-        if (rand < 1)
+        if (rand < 1) //Spawns collectable with a 1 in 5 chance.
         {
             Vector3 posOffset = new Vector3(pos.x, pos.y + 1, pos.z);
             Instantiate(_collectable, posOffset, _collectable.transform.rotation);
         }
     }
 
-    public void StartSpawning()
+    public void StartSpawning() //Continuosly spawns platforms.
     {
-        InvokeRepeating("SPawnPlatforms", 1.5f, 0.2f);
+        InvokeRepeating(nameof(SpawnPlatforms), 1.5f, 0.2f);
     }
 }
