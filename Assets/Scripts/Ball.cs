@@ -61,14 +61,14 @@ public class Ball : MonoBehaviour
 
     private void StartGame()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            _rb.velocity = new Vector3(_speed, 0, 0);
-            hasStarted = true;
-            _anim.SetBool(Tags.GET_START_GAME_TAG, true); //Animation for start text in Level 1 secene.
-            GameManager.instance.StartScoreCount();
-            PlatformSpawner.instance.StartSpawning();
-        }
+        //if (Input.GetMouseButtonDown(0))
+        //{
+        //    _rb.velocity = new Vector3(_speed, 0, 0);
+        //    hasStarted = true;
+        //    _anim.SetBool(Tags.GET_START_GAME_TAG, true); //Animation for start text in Level 1 secene.
+        //    GameManager.instance.StartScoreCount();
+        //    PlatformSpawner.instance.StartSpawning();
+        //}
     }
 
     private void ProcessGameOver()
