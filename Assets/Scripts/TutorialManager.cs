@@ -109,10 +109,17 @@ public class TutorialManager : TutorialCheckpoints
 
             if (Input.GetMouseButtonDown(0))
             {
-                _atCheck2 = false;
+                _atCheck4 = false;
                 playableDirector.Resume();
                 _rb.velocity = new Vector3(_speed, 0, 0);
             }
+        }
+
+        if (_atEnd)
+        {
+            playableDirector.Stop();
+            _rb.velocity = Vector3.zero;
+            UIManager.instance.CurrentScoreText().enabled = false;
         }
     }
 

@@ -17,6 +17,8 @@ public class Tags : MonoBehaviour
     public static string GET_CHECK3_TAG { get { return CHECK3_TAG; } }
     static string CHECK4_TAG = "Check 4";
     public static string GET_CHECK4_TAG { get { return CHECK4_TAG; } }
+    static string END_GOAL_TAG = "End Goal";
+    public static string GET_END_GOAL_TAG { get { return END_GOAL_TAG; } }
 
     //Animator Tags
     static string START_GAME_TAG = "startGame";

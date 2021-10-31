@@ -9,6 +9,7 @@ TagManager:
   - Check 2
   - Check 3
   - Check 4
+  - End Goal
   layers:
   - Default
   - TransparentFX

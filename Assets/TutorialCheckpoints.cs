@@ -10,6 +10,7 @@ public class TutorialCheckpoints : MonoBehaviour
     protected static bool _atCheck2;
     protected static bool _atCheck3;
     protected static bool _atCheck4;
+    protected static bool _atEnd;
 
     private void Awake()
     {
@@ -47,6 +48,11 @@ public class TutorialCheckpoints : MonoBehaviour
         if (other.tag == Tags.GET_CHECK4_TAG)
         {
             _atCheck4 = true;
+        }
+
+        if (other.tag == Tags.GET_END_GOAL_TAG)
+        {
+            _atEnd = true;
         }
     }
 
