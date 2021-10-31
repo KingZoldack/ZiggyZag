@@ -73,4 +73,9 @@ public class GameManager : MonoBehaviour
     {
         UIManager.instance.BestScoreValueText().text = _highScore.ToString();
     }
+
+    public int Score()
+    {
+        return _score;
+    }
 }

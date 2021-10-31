@@ -7,6 +7,9 @@ public class TutorialCheckpoints : MonoBehaviour
     //TutorialManager TutorialManager;
 
     protected static bool _atCheck1;
+    protected static bool _atCheck2;
+    protected static bool _atCheck3;
+    protected static bool _atCheck4;
 
     private void Awake()
     {
@@ -16,7 +19,6 @@ public class TutorialCheckpoints : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log($"This should be false: {_atCheck1}");
     }
 
     // Update is called once per frame
@@ -30,6 +32,21 @@ public class TutorialCheckpoints : MonoBehaviour
         if (other.tag == Tags.GET_CHECK1_TAG)
         {
             _atCheck1 = true;
+        }
+
+        if (other.tag == Tags.GET_CHECK2_TAG)
+        {
+            _atCheck2 = true;
+        }
+
+        if (other.tag == Tags.GET_CHECK3_TAG)
+        {
+            _atCheck3 = true;
+        }
+
+        if (other.tag == Tags.GET_CHECK4_TAG)
+        {
+            _atCheck4 = true;
         }
     }
 

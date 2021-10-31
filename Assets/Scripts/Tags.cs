@@ -11,6 +11,12 @@ public class Tags : MonoBehaviour
     public static string GET_COLLECTABLE_TAG { get { return COLLECTABLE_TAG; } }
     static string CHECK1_TAG = "Check 1";
     public static string GET_CHECK1_TAG { get { return CHECK1_TAG; } }
+    static string CHECK2_TAG = "Check 2";
+    public static string GET_CHECK2_TAG { get { return CHECK2_TAG; } }
+    static string CHECK3_TAG = "Check 3";
+    public static string GET_CHECK3_TAG { get { return CHECK3_TAG; } }
+    static string CHECK4_TAG = "Check 4";
+    public static string GET_CHECK4_TAG { get { return CHECK4_TAG; } }
 
     //Animator Tags
     static string START_GAME_TAG = "startGame";
