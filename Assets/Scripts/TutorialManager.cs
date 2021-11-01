@@ -2,12 +2,13 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.Playables;
 using UnityEngine.UI;
 
 public class TutorialManager : TutorialCheckpoints
 {
-    [SerializeField] GameObject _startText;
+    [SerializeField] GameObject _gamOverPanel;
     [SerializeField] GameObject _platform;
     [SerializeField] GameObject _collectable;
     [SerializeField] GameObject[] _dustTrailParticles;
@@ -27,7 +28,6 @@ public class TutorialManager : TutorialCheckpoints
 
     private void Awake()
     {
-        
     }
 
     private void Start()
@@ -39,18 +39,19 @@ public class TutorialManager : TutorialCheckpoints
         for (int i = 0; i < 11; i++) //Spawns 11 platforms at start.
         {
             SpawnPlatforms();
+            
         }
     }
 
     private void Update()
     {
-        if (Time.time >= 2.5f && !canStart)
+        if (playableDirector.time >= 2.25f && !canStart)
         {
             playableDirector.Pause();
             canStart = true;
         }
 
-        if (Time.time >= 3f)
+        if (playableDirector.time >= 3f)
         {
             DisplayScore();
         }
@@ -117,9 +118,11 @@ public class TutorialManager : TutorialCheckpoints
 
         if (_atEnd)
         {
+            _atEnd = false;
             playableDirector.Stop();
             _rb.velocity = Vector3.zero;
             UIManager.instance.CurrentScoreText().enabled = false;
+            _gamOverPanel.SetActive(true);
         }
     }
 
@@ -197,5 +200,11 @@ public class TutorialManager : TutorialCheckpoints
     {
         UIManager.instance.CurrentScoreText().enabled = true;
         UIManager.instance.CurrentScoreText().text = GameManager.instance.Score().ToString();
+    }
+
+    public void LoadMainMenu()
+    {
+        SceneManager.LoadScene(Tags.GET_MAIN_MENU_TAG);
+        _gamOverPanel.SetActive(false);
     }
 }

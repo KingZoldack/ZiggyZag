@@ -31,6 +31,8 @@ public class Tags : MonoBehaviour
     public static string GET_GAME_SCENE_TAG { get { return GAME_SCENE_TAG; } }
     static string SELECETION_MENU_TAG = "Selection Menu";
     public static string GET_SELECETION_MENU_TAG { get { return SELECETION_MENU_TAG; } }
+    static string TUTORIAL_MENU_TAG = "Tutorial";
+    public static string GET_TUTORIAL_MENU_TAG { get { return TUTORIAL_MENU_TAG; } }
 
     //PlayerPref Tags
     static string SELECTED_SKYBOX_TAG = "Selected SkyBox";

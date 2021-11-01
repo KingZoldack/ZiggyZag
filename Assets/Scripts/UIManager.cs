@@ -61,6 +61,11 @@ public class UIManager : MonoBehaviour
         SceneManager.LoadScene(Tags.GET_SELECETION_MENU_TAG);
     }
 
+    public void LoadTutorialScene()
+    {
+        SceneManager.LoadScene(Tags.GET_TUTORIAL_MENU_TAG);
+    }
+
     public void QuitGame()
     {
         Application.Quit();

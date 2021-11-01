@@ -6,10 +6,11 @@ public class SkyBoxManager : MonoBehaviour
 {
 
     [SerializeField] Material[] _skyBoxes;
+    [SerializeField] Material _TutorialSkyBox;
     [SerializeField] float _changeDelayTime = 10f;
     [SerializeField] bool _isMainMenu;
     [SerializeField] bool _isCoreGame;
-
+    [SerializeField] bool _isTutorial;
 
     int _randomIndex;
 
@@ -27,6 +28,11 @@ public class SkyBoxManager : MonoBehaviour
         {
             StopAllCoroutines();
             RenderSettings.skybox = _skyBoxes[loadSelectedSkyBox];
+        }
+
+        if (_isTutorial)
+        {
+            RenderSettings.skybox = _TutorialSkyBox;
         }
         
     }
