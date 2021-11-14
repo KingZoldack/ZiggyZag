@@ -55,6 +55,10 @@ public class UIManager : MonoBehaviour
     {
         SceneManager.LoadScene(Tags.GET_GAME_SCENE_TAG);
     }
+    public void LoadCreditsScene()
+    {
+        SceneManager.LoadScene(4);
+    }
 
     public void LoadSelectionMenu()
     {

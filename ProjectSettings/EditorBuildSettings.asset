@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Tutorial.unity
     guid: 8fde7eb9266cce844b6a884651d85855
+  - enabled: 1
+    path: Assets/Scenes/Credita.unity
+    guid: 4d9358a367725034d8d4c75f17613ab0
   m_configObjects: {}
